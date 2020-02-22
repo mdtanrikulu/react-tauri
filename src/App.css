@@ -5,6 +5,13 @@ body {
   width: 100vw;
   position: relative;
   overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  font-family: Tahoma, Geneva, serif;
 }
 .overlay {
   width: 100vw;
@@ -17,7 +24,7 @@ body {
     rgba(98, 35, 210, 0.85) 100%
   );
 }
-.author{
+.sticker {
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -29,16 +36,21 @@ body {
   color: white;
   z-index: 2;
 }
-.author > span {
-  background: rgba(120,120,120, 0.9);
+.sticker > div {
+  background: rgba(120, 120, 120, 0.9);
   padding: 0 20px;
   border-radius: 7px;
+  cursor: pointer;
+}
+.sticker > div:active {
+  cursor: -webkit-grabbing;
 }
 .container {
   display: grid;
   grid-template-columns: repeat(10, 200px);
   grid-template-rows: repeat(6, 230px);
   transform: translate(-3%, -4%);
+  will-change: transform;
 }
 .shape {
   width: 200px;
