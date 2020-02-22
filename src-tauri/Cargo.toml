@@ -5,7 +5,7 @@ description = "React Tauri Cross Platform App"
 author = [ "Muhammed Tanrikulu" ]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "react-tauri"
 edition = "2018"
 build = "src/build.rs"
 
@@ -33,5 +33,5 @@ embedded-server = [ "tauri/embedded-server" ]
 no-server = [ "tauri/no-server" ]
 
 [[bin]]
-name = "app"
+name = "react-tauri"
 path = "src/main.rs"
