@@ -9,29 +9,16 @@ default-run = "react-tauri"
 edition = "2018"
 build = "src/build.rs"
 
-[package.metadata.bundle]
-identifier = "com.mdt.app"
-icon = [
-  "icons/32x32.png",
-  "icons/128x128.png",
-  "icons/128x128@2x.png",
-  "icons/icon.icns",
-  "icons/icon.ico"
-]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.0.0-beta.0" }
 
 [dependencies]
 serde_json = "1.0"
-serde = { version = "1.0", features = [ "derive" ] }
-tauri = { version = "0.4", features = [ "all-api", "edge" ] }
-
-[target."cfg(windows)".build-dependencies]
-winres = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.0.0-beta.1", features = ["api-all"] }
 
 [features]
-dev-server = [ "tauri/dev-server" ]
-embedded-server = [ "tauri/embedded-server" ]
-no-server = [ "tauri/no-server" ]
-
-[[bin]]
-name = "react-tauri"
-path = "src/main.rs"
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]

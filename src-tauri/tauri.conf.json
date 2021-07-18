@@ -1,30 +1,67 @@
 {
-  "build": {
-    "distDir": "../build",
-    "devPath": "http://localhost:3000"
+  "package": {
+    "productName": "react-tauri",
+    "version": "0.1.0"
   },
-  "ctx": {},
+  "build": {
+    "distDir": ".",
+    "devPath": "http://localhost:3000",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
   "tauri": {
-    "embeddedServer": {
-      "active": true
-    },
     "bundle": {
-      "active": true
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "copyright": "",
+      "category": "DeveloperTool",
+      "shortDescription": "",
+      "longDescription": "",
+      "deb": {
+        "depends": [],
+        "useBootstrapper": false
+      },
+      "macOS": {
+        "frameworks": [],
+        "minimumSystemVersion": "",
+        "useBootstrapper": false,
+        "exceptionDomain": "",
+        "signingIdentity": null,
+        "entitlements": null
+      },
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
     },
-    "whitelist": {
+    "updater": {
+      "active": false
+    },
+    "allowlist": {
       "all": true
     },
-    "window": {
-      "title": "React-Tauri"
-    },
+    "windows": [
+      {
+        "title": "React Tauri",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
     "security": {
-      "csp": "default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"
-    },
-    "edge": {
-      "active": true
-    },
-    "inliner": {
-      "active": true
+      "csp": "default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
     }
   }
 }
